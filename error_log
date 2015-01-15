@@ -1,0 +1,49 @@
+[22-Dec-2014 19:38:55 UTC] PHP Parse error:  syntax error, unexpected '$chandle' (T_VARIABLE) in /home/jootoor/public_html/NKN/jootoor.com/clients/bookyourground/application/conn.php on line 16
+[22-Dec-2014 19:39:23 UTC] PHP Parse error:  syntax error, unexpected 'or' (T_LOGICAL_OR) in /home/jootoor/public_html/NKN/jootoor.com/clients/bookyourground/application/conn.php on line 17
+[23-Dec-2014 17:04:53 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 7
+[23-Dec-2014 17:04:53 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 15
+[23-Dec-2014 17:04:53 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 7
+[23-Dec-2014 17:04:53 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 15
+[23-Dec-2014 17:04:53 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 7
+[23-Dec-2014 17:04:53 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 15
+[23-Dec-2014 17:04:56 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 7
+[23-Dec-2014 17:04:56 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 15
+[23-Dec-2014 17:05:08 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 7
+[23-Dec-2014 17:05:08 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 15
+[23-Dec-2014 17:11:08 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 7
+[23-Dec-2014 17:11:08 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 15
+[23-Dec-2014 17:14:59 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 7
+[23-Dec-2014 17:14:59 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 15
+[23-Dec-2014 17:16:40 UTC] PHP Warning:  include(../application/conn.php): failed to open stream: No such file or directory in /home/deepu1984/public_html/index.php on line 3
+[23-Dec-2014 17:16:40 UTC] PHP Warning:  include(../application/conn.php): failed to open stream: No such file or directory in /home/deepu1984/public_html/index.php on line 3
+[23-Dec-2014 17:16:40 UTC] PHP Warning:  include(): Failed opening '../application/conn.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/deepu1984/public_html/index.php on line 3
+[23-Dec-2014 17:16:40 UTC] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/deepu1984/public_html/index.php on line 5
+[23-Dec-2014 17:16:40 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/deepu1984/public_html/index.php on line 5
+[23-Dec-2014 17:16:40 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 7
+[23-Dec-2014 17:16:40 UTC] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/deepu1984/public_html/index.php on line 13
+[23-Dec-2014 17:16:40 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/deepu1984/public_html/index.php on line 13
+[23-Dec-2014 17:16:40 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 15
+[23-Dec-2014 17:17:17 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 7
+[23-Dec-2014 17:17:17 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 15
+[23-Dec-2014 17:20:13 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 7
+[23-Dec-2014 17:20:13 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 15
+[23-Dec-2014 17:20:46 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 7
+[23-Dec-2014 17:20:46 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 15
+[23-Dec-2014 17:22:28 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 7
+[23-Dec-2014 17:22:28 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 15
+[23-Dec-2014 17:23:13 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 7
+[23-Dec-2014 17:23:13 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/index.php on line 15
+[26-Dec-2014 19:40:09 UTC] PHP Parse error:  syntax error, unexpected '[' in /home/deepu1984/public_html/instamojo.php on line 105
+[26-Dec-2014 19:41:08 UTC] PHP Parse error:  syntax error, unexpected '[' in /home/deepu1984/public_html/instamojo.php on line 105
+[26-Dec-2014 19:41:57 UTC] PHP Parse error:  syntax error, unexpected '[' in /home/deepu1984/public_html/instamojo.php on line 107
+[26-Dec-2014 19:44:43 UTC] PHP Parse error:  syntax error, unexpected '[' in /home/deepu1984/public_html/instamojo.php on line 167
+[26-Dec-2014 19:57:47 UTC] PHP Fatal error:  Call to undefined method Instamojo::payments() in /home/deepu1984/public_html/payment.php on line 7
+[26-Dec-2014 20:07:36 UTC] PHP Fatal error:  Call to undefined method Instamojo::payments() in /home/deepu1984/public_html/payment.php on line 7
+[06-Jan-2015 18:00:24 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/thankyou.php on line 41
+[06-Jan-2015 18:09:07 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/thankyou.php on line 41
+[06-Jan-2015 18:33:19 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/deepu1984/public_html/index.php:1) in /home/deepu1984/public_html/application/conn.php on line 2
+[06-Jan-2015 18:33:36 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/deepu1984/public_html/index.php:1) in /home/deepu1984/public_html/application/conn.php on line 2
+[06-Jan-2015 18:35:02 UTC] PHP Warning:  session_start(): Cannot send session cookie - headers already sent by (output started at /home/deepu1984/public_html/index.php:1) in /home/deepu1984/public_html/application/conn.php on line 2
+[06-Jan-2015 18:35:02 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/deepu1984/public_html/index.php:1) in /home/deepu1984/public_html/application/conn.php on line 2
+[10-Jan-2015 00:17:35 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/thankyou.php on line 64
+[10-Jan-2015 00:22:03 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/thankyou.php on line 70

@@ -1,0 +1,2 @@
+[27-Dec-2014 18:30:11 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/groundadmin/report.php on line 62
+[27-Dec-2014 18:33:27 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/deepu1984/public_html/groundadmin/report.php on line 62
