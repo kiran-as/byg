@@ -28,11 +28,26 @@ while($row = mysql_fetch_assoc($groundsqlsettings))
 
 if($_POST)
 {
+$groundarray = array();
     $fromdate = date('Y-m-d',strtotime($_POST['datepicker']));
 	$todate = date('Y-m-d',strtotime($_POST['datepicker1']));
 	$ground = $_POST['idground'];
 	$sport = $_POST['idsport'];
-	
+	/*echo "SELECT a.amount as baseamount,a.*,b.status as bookingstatus, b.*,c.*,d.*,e.*,c.amount as paidamount,c.createdby as bookedby, f.*
+						FROM `tbl_groundcost` as a,
+							  tbl_invoicedetails as b,
+							  tbl_invoice as c,
+							  tbl_groundtime as d,
+							  tbl_ground as e, 
+							  tbl_sport as f
+						 WHERE a.idgroundcost=b.idgroundcost and 
+							   b.idinvoice=c.idinvoice and 
+							   a.idgroundtime=d.idgroundtime and 
+							   d.idground = e.idground and 
+							   e.idsport = f.idsport and 
+							   a.playdate>'$fromdate' and 
+							   a.playdate<='$todate' and 
+							   a.idground=$ground and b.status='Booked' group by c.idinvoice";*/
 	$sql = mysql_query("SELECT a.amount as baseamount,a.*,b.status as bookingstatus, b.*,c.*,d.*,e.*,c.amount as paidamount,c.createdby as bookedby, f.*
 						FROM `tbl_groundcost` as a,
 							  tbl_invoicedetails as b,
@@ -47,7 +62,7 @@ if($_POST)
 							   e.idsport = f.idsport and 
 							   a.playdate>'$fromdate' and 
 							   a.playdate<='$todate' and 
-							   a.idground=$ground and b.status='Booked' group by c.idinvoice ");
+							   a.idground=$ground and b.status='Booked' group by c.idinvoice");
  /*echo "SELECT a.*,b.*,c.*,d.*,e.* 
 						FROM `tbl_groundcost` as a,
 							  tbl_invoicedetails as b,
@@ -64,10 +79,74 @@ if($_POST)
 							   a.playdate<='$todate' and 
 							   a.idground=$ground and 
 							   b.status='Booked'";*/
+							   $i=0;
+while($rowssss = mysql_fetch_assoc($sql))
+{
+//echo "<pre/>";
+//  print_r($rowssss);
+  //echo $i;
+   $groundarray[$i]['idinvoice'] = $rowssss['idinvoice'];
+   $groundarray[$i]['name'] = $rowssss['name'];
+   $groundarray[$i]['email'] = $rowssss['email'];
+   $groundarray[$i]['phone'] = $rowssss['phoneno'];
+   $groundarray[$i]['starttime'] = $rowssss['fromtime'];
+      $groundarray[$i]['endtime'] = $rowssss['totime'];
+	  $groundarray[$i]['sportname'] = $rowssss['sportname'];
+	  $groundarray[$i]['paidamount'] = $rowssss['paidamount'];
+$groundarray[$i]['bookedby'] = $rowssss['bookedby'];
+$groundarray[$i]['bookingstatus'] = $rowssss['bookingstatus'];
+$groundarray[$i]['bookingid'] = $rowssss['bookingid'];
+/*
+if($rowssss['paidamount']==0)
+{
+ echo "0";
+   $idinvoice = $rowssss['idinvoice'];
+   $amountssss=0;
+	$sqls = mysql_query("SELECT a.amount as baseamount,a.*,b.status as bookingstatus, b.*
+						FROM `tbl_groundcost` as a,tbl_invoicedetails as b 
+						where a.idgroundcost=b.idgroundcost and b.idinvoice=$idinvoice");
+	while($rowss = mysql_fetch_assoc($sqls))
+	{
+	   $amountssss = $amountssss+$rowss['baseamount'];
+	}
+	$groundarray[$i]['bookingamount']='0';
+	$groundarray[$i]['balanceamount'] = $amountssss;
+	$groundarray[$i]['baseamount'] = $amountssss;
+
+}
+else
+{
+echo "1";
+	$amountss=0;
+	$idinvoice = $rowssss['idinvoice'];
+	$sql = mysql_query("SELECT a.amount as baseamount,a.*,b.status as bookingstatus, b.*
+						FROM `tbl_groundcost` as a,tbl_invoicedetails as b 
+						where a.idgroundcost=b.idgroundcost and b.idinvoice=$idinvoice");
+	while($rowss = mysql_fetch_assoc($sql))
+	{
+	   $amountss = $amountss+$rowss['baseamount'];
+	}
+	$groundarray[$i]['bookingamount'] = ($amountss/100)*$groundpercentage;
+$groundarray[$i]['balanceamount'] = $amountss - (($amountss/100)*$groundpercentage);
+$groundarray[$i]['baseamount'] = $amountss;
+	
+}*/
+//echo "before";
+//echo $i;
+   $groundarray[$i]['playdate'] = date('Y-m-d',strtotime($rowssss['playdate']));
+   $i++;
+  // echo "after";
+  // echo $i;
+}	
+/*
+print_r($groundarray);
+exit;						   
  $i=0;
 while($row = mysql_fetch_assoc($sql))
 {
-
+echo "<pre/>";
+  print_r($row);
+  echo $i;
    $groundarray[$i]['idinvoice'] = $row['idinvoice'];
    $groundarray[$i]['name'] = $row['name'];
    $groundarray[$i]['email'] = $row['email'];
@@ -82,6 +161,7 @@ $groundarray[$i]['bookingid'] = $row['bookingid'];
 
 if($row['paidamount']==0)
 {
+ echo "0";
    $idinvoice = $row['idinvoice'];
    $amountssss=0;
 	$sqls = mysql_query("SELECT a.amount as baseamount,a.*,b.status as bookingstatus, b.*
@@ -91,13 +171,14 @@ if($row['paidamount']==0)
 	{
 	   $amountssss = $amountssss+$rowss['baseamount'];
 	}
-	$groundarray[$i]['bookingamount']=0;
+	$groundarray[$i]['bookingamount']='0';
 	$groundarray[$i]['balanceamount'] = $amountssss;
 	$groundarray[$i]['baseamount'] = $amountssss;
 
 }
 else
 {
+echo "1";
 	$amountss=0;
 	$idinvoice = $row['idinvoice'];
 	$sql = mysql_query("SELECT a.amount as baseamount,a.*,b.status as bookingstatus, b.*
@@ -112,10 +193,17 @@ $groundarray[$i]['balanceamount'] = $amountss - (($amountss/100)*$groundpercenta
 $groundarray[$i]['baseamount'] = $amountss;
 	
 }
+echo "before";
+echo $i;
    $groundarray[$i]['playdate'] = date('Y-m-d',strtotime($row['playdate']));
    $i++;
+   echo "after";
+   echo $i;
 }
-
+echo "<pre/>";
+print_r($groundarray);
+exit;
+*/
 $k=0;
 	$sql = mysql_query("SELECT a.amount as baseamount,a.*,b.status as bookingstatus, b.*,c.*,d.*,e.*,c.amount as paidamount,c.createdby as bookedby, f.*
 						FROM `tbl_groundcost` as a,
@@ -145,14 +233,26 @@ while($row = mysql_fetch_assoc($sql))
 $groundarrays[$k]['bookedby'] = $row['bookedby'];
 $groundarrays[$k]['bookingstatus'] = $row['bookingstatus'];
 $groundarrays[$k]['bookingid'] = $row['bookingid'];
-$groundarrays[$k]['baseamount'] = $row['baseamount'];
+/*
 if($row['paidamount']==0)
 {
-	$groundarrays[$k]['bookingamount']=0;
-$groundarrays[$k]['balanceamount'] = $row['baseamount'];	
+   $idinvoice = $row['idinvoice'];
+   $amountssss=0;
+	$sqls = mysql_query("SELECT a.amount as baseamount,a.*,b.status as bookingstatus, b.*
+						FROM `tbl_groundcost` as a,tbl_invoicedetails as b 
+						where a.idgroundcost=b.idgroundcost and b.idinvoice=$idinvoice");
+	while($rowss = mysql_fetch_assoc($sqls))
+	{
+	   $amountssss = $amountssss+$rowss['baseamount'];
+	}
+	$groundarrays[$k]['bookingamount']='0';
+	$groundarrays[$k]['balanceamount'] = $amountssss;
+	$groundarrays[$k]['baseamount'] = $amountssss;
+
 }
 else
 {
+	$amountss=0;
 	$idinvoice = $row['idinvoice'];
 	$sql = mysql_query("SELECT a.amount as baseamount,a.*,b.status as bookingstatus, b.*
 						FROM `tbl_groundcost` as a,tbl_invoicedetails as b 
@@ -161,10 +261,12 @@ else
 	{
 	   $amountss = $amountss+$rowss['baseamount'];
 	}
-	$groundarray[$k]['bookingamount'] = ($amountss/100)*$groundpercentage;
-	$groundarrays[$k]['balanceamount'] = $row['baseamount'] - (($row['baseamount']/100)*$groundpercentage);
+	$groundarrays[$k]['bookingamount'] = ($amountss/100)*$groundpercentage;
+$groundarrays[$k]['balanceamount'] = $amountss - (($amountss/100)*$groundpercentage);
+$groundarrays[$k]['baseamount'] = $amountss;
+	
 }
-
+*/
    $groundarrays[$k]['playdate'] = date('Y-m-d',strtotime($row['playdate']));
    $k++;
 }							   
@@ -275,15 +377,16 @@ function showcalendar()
               <th>Play Date</th>
 			  <th>Sport</th>
               <th>Booked By</th>
-			  <th>Base Amount</th>
+		<!--	  <th>Base Amount</th>
 			  
               <th>Booking Amount</th>
-			  <th>Balance Amount</th>
+			  <th>Balance Amount</th>-->
               <th>Booking ID</th>
 			  <th>Booking Status</th>
             </tr>
           </thead>
           <tbody>
+          <?php //echo "<pre/>";print_r($groundarray);?>
 		  <?php for($i=0;$i<count($groundarray);$i++){
 		   $idinvoice = $groundarray[$i]['idinvoice'];
 		    $row_color = ($s % 2) ? 'alternaterowcolor1' : 'alternaterowcolor'; $no = $s+1;
@@ -298,7 +401,7 @@ function showcalendar()
 				                         from tbl_invoicedetails as a, tbl_groundcost as c, tbl_groundtime as d
 										 where a.idgroundcost=c.idgroundcost  
 										 and c.idgroundtime=d.idgroundtime 
-										 and a.idinvoice='$idinvoice' and a.status='Booked'");
+										 and a.idinvoice='$idinvoice' and a.status='Booked' order by c.idgroundcost");
                 $groundtime='';
 
 				while($row = mysql_fetch_assoc($groundsql))
@@ -312,9 +415,9 @@ function showcalendar()
 		    <td><?php echo $groundarray[$i]['playdate'];?></td>
 		   <td><?php  echo $groundarray[$i]['sportname'];?></td>
 		   <td><?php  if($groundarray[$i]['bookedby']>0){ echo "Admin";} else {echo "Online";};?></td>
-		   <td><?php echo $groundarray[$i]['baseamount'];?></td>
-		   <td><?php echo $groundarray[$i]['bookingamount'];?></td>
-		   <td><?php echo $groundarray[$i]['balanceamount'];?></td>
+		  <!-- <td><?php //echo $groundarray[$i]['baseamount'];?></td>
+		   <td><?php //echo $groundarray[$i]['bookingamount'];?></td>
+		   <td><?php //echo $groundarray[$i]['balanceamount'];?></td>-->
 		   
 		    <td><?php echo $groundarray[$i]['bookingid'];?></td>
 			<td><?php if($groundarray[$i]['bookingstatus']=='Booked'){ echo "Booked";} else { echo "Canelled";};?>
@@ -335,7 +438,7 @@ function showcalendar()
 				                         from tbl_invoicedetails as a, tbl_groundcost as c, tbl_groundtime as d
 										 where a.idgroundcost=c.idgroundcost  
 										 and c.idgroundtime=d.idgroundtime 
-										 and a.idinvoice='$idinvoice' and a.status='Released'");
+										 and a.idinvoice='$idinvoice' and a.status='Released' order by c.idgroundcost");
                 $groundtime='';
 				while($row = mysql_fetch_assoc($groundsql))
 				{
@@ -348,9 +451,9 @@ function showcalendar()
 		    <td><?php echo $groundarrays[$i]['playdate'];?></td>
 		   <td><?php  echo $groundarrays[$i]['sportname'];?></td>
 		   <td><?php  if($groundarrays[$i]['bookedby']>0){ echo "Admin";} else {echo "Online";};?></td>
-		   <td><?php echo $groundarrays[$i]['baseamount'];?></td>
-		   <td><?php echo $groundarrays[$i]['bookingamount'];?></td>
-		   <td><?php echo $groundarrays[$i]['balanceamount'];?></td>
+		 <!--    <td><?php //echo $groundarrays[$i]['baseamount'];?></td>
+		 <td><?php //echo $groundarrays[$i]['bookingamount'];?></td>
+		   <td><?php //echo $groundarrays[$i]['balanceamount'];?></td>-->
 		   
 		    <td><?php echo $groundarrays[$i]['bookingid'];?></td>
 			<td><?php if($groundarrays[$i]['bookingstatus']=='Booked'){ echo "Booked";} else { echo "Canelled";};?>

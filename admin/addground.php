@@ -46,18 +46,31 @@ if($_POST)
   $description = $_POST['field1'];
   $shortname = $_POST['shortname'];  
   $mobile = $_POST['mobile'];
+  $slot = $_POST['slot'];
   $status = 'Active';
-  
-  mysql_query("Insert into tbl_ground(groundname,address,venue,starttime,endtime,latitude,longitude,city,groundadmin,
-  status,idlocation,idsport,description,shortname,mobile) values 
+  echo "Insert into tbl_ground(groundname,address,venue,starttime,endtime,latitude,longitude,city,groundadmin,
+  status,idlocation,idsport,description,shortname,mobile,slot) values 
   ('".$groundname."','".$address."','".$venue."','".$starttime."','".$endtime."','".$latitude."','".$longitude."','".$city."',
-  '".$groundadmin."','".$status."','".$idlocation."','".$idsport."','".$description."','".$shortname."','".$mobile."')");
+  '".$groundadmin."','".$status."','".$idlocation."','".$idsport."','".$description."','".$shortname."','".$mobile."','".$slot."')";
+//exit;
+  mysql_query("Insert into tbl_ground(groundname,address,venue,starttime,endtime,latitude,longitude,city,groundadmin,
+  status,idlocation,idsport,description,shortname,mobile,slot) values 
+  ('".$groundname."','".$address."','".$venue."','".$starttime."','".$endtime."','".$latitude."','".$longitude."','".$city."',
+  '".$groundadmin."','".$status."','".$idlocation."','".$idsport."','".$description."','".$shortname."','".$mobile."','".$slot."')");
   $idground = mysql_insert_id();
   
   for($i=0;$i<24;$i++)
   {
     $fromtime = $starttime;
-    $timestamp = strtotime($starttime) + 60*60;
+    if($slot=='30')
+    {
+    $timestamp = strtotime($starttime) + 30*60;
+    }
+    if($slot=='60')
+    {
+      $timestamp = strtotime($starttime) + 60*60;
+    }
+    
 	$time = date('H:i', $timestamp);
 	$totime = $starttime = $time;
 	if($time > $endtime)
@@ -194,7 +207,17 @@ if($_POST)
                     <div class="col-sm-8">
                       <input type="type" class="form-control"  name='mobile' id='mobile'>
                     </div>
-                  </div> 				  
+                  </div> 
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label"><span class="error-text">*</span>Time Selection</label>
+                    <div class="col-sm-8">
+                      <select name='slot' id='slot' class="form-control" >
+      
+      <option value='30'>30 Minutes</option>
+      <option value='60'>60 Minutes</option>
+        </select>
+                    </div>
+                  </div>				  
                 </div>
                 </div>    
                 <div class="clearfix brd-top pad-t20 mar-t10">

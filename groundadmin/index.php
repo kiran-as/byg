@@ -1,6 +1,7 @@
 <?php
 error_reporting (E_ALL & ~E_NOTICE & ~E_DEPRECATED);
 include("../application/conn.php");
+mysql_query("DELETE FROM tbl_tempseatblock WHERE createddate <= DATE_SUB( NOW( ) , INTERVAL 1 DAY )");
 if($_POST)
 {
   

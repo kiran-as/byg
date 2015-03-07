@@ -19,7 +19,7 @@ while($row = mysql_fetch_assoc($bookedseat))
     $bookedseatsarray[$i] = $row['idgroundcost'];
 	$i++;
 }
-
+print_r($bookedseatsarray);
 $bookedseattemp = mysql_query("Select idgroundcost from tbl_tempseatblock");
 while($row = mysql_fetch_assoc($bookedseattemp))
 {
