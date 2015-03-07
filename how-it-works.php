@@ -35,18 +35,18 @@
                 <p class="font16-sm">Procedure to book slots through BookYourGround.com :</p>
                 <ul class="content-list">
                     <li>Log on to <a href="#">www.BookYourGround.com</a></li>
-                    <li>Select the desired City, Date , Venue (optional)</li>
+                    <li>Select the desired City, Sport, Date</li>
                     <li>Choose 'Venue' and 'Time slot' as per your preference</li>
-                    <li>Click on 'Book Now'</li>
-                    <li>Read and Check 'I Agree to the Terms and Conditions'</li>
-                    <li>Crosscheck details and the amount payable in the Order Summary</li>
+                    <li>Click on 'Continue'</li>
+                    <li>Crosscheck booking details and the amount payable in the Order Summary</li>
                     <li>Enter your Email Id and Mobile no. in order to get the booking confirmation email and SMS</li>
+                    <li>Read and Check 'I Agree to the Terms and Conditions'</li>
                     <li>Click on 'Proceed to Payment' to go ahead with your booking </li>
                     <li>Choose the preferred Mode of Payment</li>
                     <li>Enter your Card number and other card details and click on 'Pay'</li>
                     <li>You will receive a booking confirmation number by email and SMS</li>
-                    <li>In a rare case, if you do not receive the email or SMS, click on the 'Resend Confirmation/SMS my booking' option to get a new confirmation</li>
-                    <li>You can also contact us on (+91) 80958 87000, write to us at <a href="mailto:support@bookyourground.com">support@bookyourground.com</a> for assistance</li>                    
+                    <li>In a rare case, if you do not receive the email or SMS, call our support number to get a new confirmation</li>
+                    <li>You can contact us on (+91) 80958 87000, write to us at <a href="mailto:support@bookyourground.com">support@bookyourground.com</a> for assistance</li>                    
                 </ul>                                                                       
                 </div>
                 

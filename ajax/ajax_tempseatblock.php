@@ -19,6 +19,9 @@ while($row = mysql_fetch_assoc($groundsqlsettings))
 	}
 	if($type==1)
 	{
+
+mysql_query("Delete from tbl_tempseatblock where sessionid='$sessionid' and idgroundcost='$idgroundcost'");
+
 	mysql_query("Insert into tbl_tempseatblock (idgroundcost,sessionid,createddate)
 	 VALUES('".$idgroundcost."','".$sessionid."','".$createddate."')");
 	}

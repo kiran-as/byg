@@ -10,7 +10,7 @@ while($row = mysql_fetch_assoc($groundlist))
 {
    $idground .= ','.$row['idground'];
 }
-$groundsqllist = mysql_query("Select * from tbl_ground where idground in ($idground) and idsport='$idsport'");
+$groundsqllist = mysql_query("Select * from tbl_ground where idground in ($idground) and idsport='$idsport' and idlocation='$idlocation'");
 $i=0;
 while($row = mysql_fetch_assoc($groundsqllist))
 {
@@ -40,7 +40,7 @@ $description = $arraygrounddetails[$i]['description'];
 $table.="
                     <div class='clearfix brd-btm pad-t15 pad-b15'>
                         <div class='col-sm-5 col-md-2'>
-                            <img src='img/list_thumb.png' class='img-responsive'/>
+                            <img src='img/$idground.png' class='img-responsive'/>
                         </div>
                         <div class='col-sm-7 col-md-8'>
                             <h4 class='secondary-color'>$groundname</h4>

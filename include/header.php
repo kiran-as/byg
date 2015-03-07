@@ -23,8 +23,8 @@
                 <ul class="nav navbar-nav header-nav">
                  <li class="active"><a href="#" class="pad-sm-t13 pad-sm-b12">Home</a></li>
                   <!--<li><a href="#" class="pad-sm-t13 pad-sm-b12">How it Works</a></li>-->
-                  <li class=""><a href="#" class="pad-sm-t13 pad-sm-b12">SMS my Booking</a></li>
-                  <li class=""><a href="#" class="pad-sm-t13 pad-sm-b12">Cancel Booking</a></li>
+                  <li class=""><a href="bookingmessage.php" class="pad-sm-t13 pad-sm-b12">SMS my Booking</a></li>
+                  <li class=""><a href="bookingmessage.php" class="pad-sm-t13 pad-sm-b12">Cancel Booking</a></li>
                                    
                 </ul>                   
                </div>                                            

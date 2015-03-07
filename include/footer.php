@@ -1,5 +1,6 @@
 <footer class="home-footer">
           <div class="container">
+          <div class="clearfix">
            <div class="sm-pull-right">
                 <ul class="footer-nav sm-pull-left pad-t5 mar-r20">
                     <!--<li><a href="#">About Us</a></li>-->
@@ -15,7 +16,10 @@
                     <li><a href="" class="linkedin" style='display:none'>Linkedin</a></li>
                 </ul>
             </div>            
-            <p class="sm-pull-left pad-t5 pad-xs-t20">&copy; 2014 bookyourground</p>               
+            <p class="sm-pull-left pad-t5 pad-xs-t20">&copy; 2014 bookyourground</p> 
+               </div>   
+                <p class="text-left">
+    <span id="siteseal"><script type="text/javascript" src="https://seal.starfieldtech.com/getSeal?sealID=Npd5F6vpLc8QrUr74X00YKLAuhweFpH13mC6wZiEvqxziBVGu05UDt"></script></span>
+    </p>           
           </div>          
     </footer> 
-    <span id="siteseal"><script type="text/javascript" src="https://seal.starfieldtech.com/getSeal?sealID=Npd5F6vpLc8QrUr74X00YKLAuhweFpH13mC6wZiEvqxziBVGu05UDt"></script></span>

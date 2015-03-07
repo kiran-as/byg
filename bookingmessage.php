@@ -29,16 +29,13 @@
    
                 <div class="secondary-box clearfix mh-md-375">
                 <div class="pad-l20 pad-t5 pad-b5 brd-btm">
-                   <h4 class="primary-title">Contact Us</h4>
+                   <h4 class="primary-title">Booking Info</h4>
                 </div>
                 <div class="clearfix pad20">
-                <p class="font16-sm">Www.BookYourGround.com</p>
+               
                 <p>
-                   29/918A, Major road, Janatha, Vytilla<br/>
-                   Cochin. Pin – 682019<br/>
-                   Kerala, India<br/>
-                   Ph: (+91) 8095 88 7000<br/>
-                   Email: <a href="mailto:support@bookyourground.com">support@bookyourground.com</a>
+                   Call our support number +91-8095 88 7000 or Email: <a href="mailto:support@bookyourground.com">support@bookyourground.com </a>and we will help you immediately with your request
+
                 </p>                                                                                      
                 </div>
                 
